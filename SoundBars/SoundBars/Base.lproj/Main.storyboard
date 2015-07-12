@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SoundBars" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ei-X0-dcO" customClass="SVBSoundBars" customModule="SoundBars" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="560" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5MJ-MN-5Hm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                        <color key="value" red="0.8331451416015625" green="0.12758371233940125" blue="0.11358378082513809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr4-ix-f4w">
+                                <rect key="frame" x="240" y="228" width="120" height="30"/>
+                                <state key="normal" title="Toggle Animation"/>
+                                <connections>
+                                    <action selector="animate" destination="BYZ-38-t0r" eventType="touchUpInside" id="gAf-T4-PVb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xr4-ix-f4w" firstAttribute="centerX" secondItem="9ei-X0-dcO" secondAttribute="centerX" id="0cJ-Mn-Hnj"/>
+                            <constraint firstItem="9ei-X0-dcO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NER-cr-58I"/>
+                            <constraint firstItem="9ei-X0-dcO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hUd-df-niL"/>
+                            <constraint firstItem="Xr4-ix-f4w" firstAttribute="top" secondItem="9ei-X0-dcO" secondAttribute="bottom" constant="8" id="wVU-99-dRe"/>
+                            <constraint firstItem="9ei-X0-dcO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="y4w-3y-fal"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="soundbars" destination="9ei-X0-dcO" id="R0u-qi-v9T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="402"/>
+        </scene>
+    </scenes>
+</document>
