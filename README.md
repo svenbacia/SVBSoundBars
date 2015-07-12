@@ -17,10 +17,10 @@ Clone this repo and copy `SVBSoundBars.swift` into your project
 3. Call `startProgressAnimation()` to start the animation
 
 ## Attributes
-`numberOfBars`: The number of bars displayed in your `SVBSoundBars` view
-`margin`: the spacing between each bar
-`duration`: the duration for a complete animation cycle (animating the bars from their initial position the their complete state and back to the initial position).
-`barColor`: the fill color of the bars
+* `numberOfBars`: The number of bars displayed in your `SVBSoundBars` view
+* `margin`: the spacing between each bar
+* `duration`: the duration for a complete animation cycle (animating the bars from their initial position the their complete state and back to the initial position).
+* `barColor`: the fill color of the bars
 
 ## License
 `SVBSoundbars` is released under an MIT License.
