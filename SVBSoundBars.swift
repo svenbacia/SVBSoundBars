@@ -36,12 +36,12 @@ class SVBSoundBars: UIView {
     progressAnimation.additive    = true
     progressAnimation.repeatCount = HUGE
     return progressAnimation
-    }()
+  }()
   
   /// Bar fill color
   @IBInspectable var barColor: UIColor = UIColor.greenColor() {
     didSet {
-      bars.map { (bar) -> Void in
+      for bar in bars {
         bar.shape.fillColor = barColor.CGColor
       }
     }
@@ -122,7 +122,7 @@ class SVBSoundBars: UIView {
   
   /// Remove `progressAnimation` from all `bars`
   private func stopProgressAnimation() {
-    bars.map { (bar) -> Void in
+    for bar in bars {
       bar.shape.removeAllAnimations()
     }
   }

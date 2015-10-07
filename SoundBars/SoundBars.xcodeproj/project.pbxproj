@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267301C91BC57D6A008889D7 /* SVBSoundBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267301C81BC57D6A008889D7 /* SVBSoundBars.swift */; settings = {ASSET_TAGS = (); }; };
 		26DD09701B4FE7D8002E6728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD096F1B4FE7D8002E6728 /* AppDelegate.swift */; };
 		26DD09721B4FE7D8002E6728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD09711B4FE7D8002E6728 /* ViewController.swift */; };
 		26DD09751B4FE7D8002E6728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD09731B4FE7D8002E6728 /* Main.storyboard */; };
 		26DD09771B4FE7D8002E6728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD09761B4FE7D8002E6728 /* Assets.xcassets */; };
 		26DD097A1B4FE7D8002E6728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD09781B4FE7D8002E6728 /* LaunchScreen.storyboard */; };
-		26E17BE71B513E1900E26EED /* SVBSoundBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E17BE61B513E1900E26EED /* SVBSoundBars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		267301C81BC57D6A008889D7 /* SVBSoundBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVBSoundBars.swift; path = ../../SVBSoundBars.swift; sourceTree = "<group>"; };
 		26DD096C1B4FE7D8002E6728 /* SoundBars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundBars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD096F1B4FE7D8002E6728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26DD09711B4FE7D8002E6728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +24,6 @@
 		26DD09761B4FE7D8002E6728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26DD09791B4FE7D8002E6728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26DD097B1B4FE7D8002E6728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26E17BE61B513E1900E26EED /* SVBSoundBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVBSoundBars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +56,9 @@
 		26DD096E1B4FE7D8002E6728 /* SoundBars */ = {
 			isa = PBXGroup;
 			children = (
+				267301C81BC57D6A008889D7 /* SVBSoundBars.swift */,
 				26DD096F1B4FE7D8002E6728 /* AppDelegate.swift */,
 				26DD09711B4FE7D8002E6728 /* ViewController.swift */,
-				26E17BE61B513E1900E26EED /* SVBSoundBars.swift */,
 				26DD09731B4FE7D8002E6728 /* Main.storyboard */,
 				26DD09761B4FE7D8002E6728 /* Assets.xcassets */,
 				26DD09781B4FE7D8002E6728 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26E17BE71B513E1900E26EED /* SVBSoundBars.swift in Sources */,
+				267301C91BC57D6A008889D7 /* SVBSoundBars.swift in Sources */,
 				26DD09721B4FE7D8002E6728 /* ViewController.swift in Sources */,
 				26DD09701B4FE7D8002E6728 /* AppDelegate.swift in Sources */,
 			);
