@@ -18,7 +18,7 @@ class SVBSoundBars: UIView {
     
     init(color: UIColor, initialHeight: CGFloat) {
       self.shape           = CAShapeLayer()
-      self.shape.fillColor = color.CGColor
+      self.shape.fillColor = color.cgColor
       self.initialHeight   = initialHeight
     }
   }
@@ -33,16 +33,16 @@ class SVBSoundBars: UIView {
   private let progressAnimation: CAKeyframeAnimation = {
     let progressAnimation = CAKeyframeAnimation(keyPath: "path")
     progressAnimation.keyTimes    = [0, 0.5, 1]
-    progressAnimation.additive    = true
+    progressAnimation.isAdditive    = true
     progressAnimation.repeatCount = HUGE
     return progressAnimation
   }()
   
   /// Bar fill color
-  @IBInspectable var barColor: UIColor = UIColor.greenColor() {
+  @IBInspectable var barColor: UIColor = UIColor.green {
     didSet {
       for bar in bars {
-        bar.shape.fillColor = barColor.CGColor
+        bar.shape.fillColor = barColor.cgColor
       }
     }
   }
@@ -87,11 +87,11 @@ class SVBSoundBars: UIView {
     
     for i in 0..<numberOfBars {
       let shape   = bars[i].shape
-      shape.frame = completeRectForBarAtIndex(i)
-      shape.path  = barPathForRect(initialRectForBarAtIndex(i, initialHeight: bars[i].initialHeight)).CGPath
+		shape.frame = completeRectForBar(at: i)
+		shape.path  = barPath(for: initialRectForBar(at: i, initialHeight: bars[i].initialHeight)).cgPath
       
       if animating {
-        addProgressAnimationForBarAtIndex(i)
+		addProgressAnimationForBar(at: i)
       }
     }
   }
@@ -101,23 +101,23 @@ class SVBSoundBars: UIView {
   /// Adds `progressAnimation` to all `bars` which starts the animation.
   private func startProgressAnimation() {
     for i in 0..<bars.count {
-      addProgressAnimationForBarAtIndex(i)
+		addProgressAnimationForBar(at: i)
     }
   }
   
   /// Adds `progressAnimation` to a specific bar.
   /// - Parameter index: The index of the bar where the animation should be added to.
-  private func addProgressAnimationForBarAtIndex(index: Int) {
+  private func addProgressAnimationForBar(at index: Int) {
     let bar = bars[index]
     
     progressAnimation.duration = CFTimeInterval(CGFloat(1.0) - bar.initialHeight) * duration
     progressAnimation.values   = [
-      barPathForRect(initialRectForBarAtIndex(index, initialHeight: bar.initialHeight)).CGPath,
-      barPathForRect(completeRectForBarAtIndex(index)).CGPath,
-      barPathForRect(initialRectForBarAtIndex(index, initialHeight: bar.initialHeight)).CGPath
+		barPath(for: initialRectForBar(at: index, initialHeight: bar.initialHeight)).cgPath,
+		barPath(for: completeRectForBar(at: index)).cgPath,
+		barPath(for: initialRectForBar(at: index, initialHeight: bar.initialHeight)).cgPath
     ]
     
-    bar.shape.addAnimation(progressAnimation, forKey: "progress")
+    bar.shape.add(progressAnimation, forKey: "progress")
   }
   
   /// Remove `progressAnimation` from all `bars`
@@ -131,10 +131,10 @@ class SVBSoundBars: UIView {
   /// - Parameter index: Index of the bar
   /// - Parameter initialHeight: Initial height of the bar
   /// - Returns: The inital `CGRect`
-  private func initialRectForBarAtIndex(index: Int, initialHeight: CGFloat) -> CGRect {
+  private func initialRectForBar(at index: Int, initialHeight: CGFloat) -> CGRect {
     
-    let height = CGRectGetHeight(frame)
-    let width  = (CGRectGetWidth(frame) - 2 * margin) / 3.0
+    let height = frame.height
+    let width  = (frame.width - 2 * margin) / 3.0
     
     return CGRect(x: CGFloat(index) * (width + margin), y: height - height * initialHeight, width: width, height: height * initialHeight)
   }
@@ -142,10 +142,10 @@ class SVBSoundBars: UIView {
   /// Returns the complete frame for a specific bar.
   /// - Parameter index: The index of the bar
   /// - Returns: The frame of the bar
-  private func completeRectForBarAtIndex(index: Int) -> CGRect {
+  private func completeRectForBar(at index: Int) -> CGRect {
     
-    let height = CGRectGetHeight(frame)
-    let width  = (CGRectGetWidth(frame) - 2 * margin) / 3.0
+    let height = frame.height
+    let width  = (frame.width - 2 * margin) / 3.0
     
     return CGRect(x: CGFloat(index) * (width + margin), y: 0, width: width, height: height)
   }
@@ -153,9 +153,8 @@ class SVBSoundBars: UIView {
   /// Returns a `UIBezierPath` with rounded corners.
   /// - Parameter rect: The rect for the path
   /// - Returns: `UIBezierPath` with rounded corners
-  private func barPathForRect(rect: CGRect) -> UIBezierPath {
-    let path = UIBezierPath(roundedRect: CGRect(origin: CGPoint(x: 0, y: rect.origin.y), size: rect.size), byRoundingCorners: [UIRectCorner.TopLeft, UIRectCorner.TopRight], cornerRadii: CGSize(width: 1.0, height: 1.0))
+  private func barPath(for rect: CGRect) -> UIBezierPath {
+    let path = UIBezierPath(roundedRect: CGRect(origin: CGPoint(x: 0, y: rect.origin.y), size: rect.size), byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 1.0, height: 1.0))
     return path
   }
-  
 }
